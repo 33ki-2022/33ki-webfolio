@@ -375,7 +375,7 @@ main {
 #contact {
     position: relative;
     background-color: #F6F6F6;
-    padding: calc((250 / 1920)*100vw) 0;
+    padding: calc((150 / 1920)*100vw) 0;
     width: 90%;
     margin: 0 auto calc((120 /1920)*100vw);
 }
@@ -466,6 +466,8 @@ footer {
     padding: calc((240 / 1920)*100vw) 0 calc((200 / 1920)*100vw);
     background-color: #DDD;
     position: relative;
+    display: flex;
+    flex-direction: row;
 }
 
 footer::before {
@@ -486,7 +488,25 @@ footer::before {
 .footer_container {
     display: flex;
     flex-direction: column;
-    gap: calc((80 / 1920)*100vw);
+    gap: calc((30 / 1920)*100vw);
     align-items: start;
     margin: 0 0 0 calc((85 / 1920)*100vw);
+}
+
+.footer_container_sns {
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: calc((50 / 1920)*100vw);
+    align-items: end;
+    justify-items: end;
+    width: calc((50 /1920)*100vw);
+    aspect-ratio: 1 / 1;
+    margin: calc((340 / 1920)*100vw) calc((85 / 1920)*100vw) 0 0;
+}
+
+.fa-brands {
+    color: #000000;
+    font-size: calc((50 / 1920)*100vw);
 }
