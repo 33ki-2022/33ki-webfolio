@@ -172,14 +172,15 @@ main {
     border-radius: 50%;
     border-style: solid;
     border-color: #000000;
-    border-width: 2px;
+    border-width: 1px;
 }
 
 .mainicon img {
     border-radius: 50%;
-    border-style: solid;
-    border-color: #ffffff;
-    border-width: 10px;
+    /* border-style: solid;
+    border-color: #ffffff; */
+    padding: .5em;
+    box-sizing: border-box;
 }
 
 .scroll {
@@ -195,10 +196,20 @@ main {
     border-style: solid;
     border-color: #000000;
     border-width: 0;
-    border-left-width: 1px;
+    border-left-width: .05em;
     height: calc((250 / 1920)*100vw);
     top: 100%;
     left: 50%;
+}
+
+@media only screen and (max-width: 767px) {
+    .mainicon {
+        border-width: .1px;
+    }
+
+    h1 {
+        letter-spacing: .6em;
+    }
 }
 
 .welcome {
@@ -249,8 +260,8 @@ main {
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    row-gap: 100px;
-    column-gap: 40px;
+    row-gap: calc((100 / 1920)*100vw);
+    column-gap: calc((40 / 1920)*100vw);
     justify-items: center;
 }
 
@@ -263,12 +274,12 @@ main {
     width: calc((844 / 1920)*100vw);
     aspect-ratio: 4 / 3;
     background-color: #fff;
-    border-radius: 60px;
+    border-radius: calc((80 / 1920)*100vw);
 }
 
 .information {
     display: flex;
-    margin: 44px 0 0;
+    margin: calc((44 / 1920)*100vw) 0 0;
 }
 
 .genre {
@@ -276,7 +287,7 @@ main {
     padding: 0 calc((34 / 1920)*100vw);
     align-content: center;
     border-radius: 80px;
-    margin: 0 25px 0 34px;
+    margin: 0 calc((40 / 1920)*100vw) 0 calc((34 / 1920)*100vw);
 }
 
 .category {
@@ -285,14 +296,14 @@ main {
 
 .add_line::after {
     content: "|";
-    margin: 0 25px;
+    margin: 0 calc((25 / 1920)*100vw);
 }
 
 .viewmore {
     position: relative;
-    padding: 0 62px;
+    padding: 0 calc((62 / 1920)*100vw);
     border-style: solid;
-    border-width: 1px;
+    border-width: .05em;
     border-radius: 104px;
 }
 
@@ -302,10 +313,10 @@ main {
     border-style: solid;
     border-color: #fff;
     border-width: 0;
-    border-top-width: 1px;
+    border-top-width: .05em;
     width: calc((200 / 1920)*100vw);
     top: 50%;
-    transform: translateX(30px);
+    transform: translateX(calc((30 / 1920)*100vw));
 }
 
 #about {
@@ -330,7 +341,7 @@ main {
     aspect-ratio: 23 / 31;
     border-style: solid;
     border-color: #000000;
-    border-width: 1px;
+    border-width: .05em;
     border-top-right-radius: 460px;
     border-top-left-radius: 460px;
 }
@@ -367,8 +378,8 @@ main {
     align-items: center;
     justify-content: center;
     row-gap: 62px;
-    column-gap: 50px;
-    padding: 0 calc((150 / 1920)*100vw) 0 calc((50 / 1920)*100vw) ;
+    column-gap: calc((50 / 1920)*100vw);
+    padding: 0 calc((150 / 1920)*100vw) 0 calc((50 / 1920)*100vw);
     position: relative;
     width: 80%;
     margin: 0 auto;
@@ -412,7 +423,7 @@ main {
     border-style: solid;
     border-color: #000000;
     border-width: 0;
-    border-top-width: 1px;
+    border-top-width: .05em;
     width: calc((400 / 1920)*100vw);
 }
 
@@ -422,9 +433,9 @@ main {
     display: inline-block;
     position: absolute;
     right: 0;
-    margin: -3px 0 0;
-    height: 5px;
-    width: 5px;
+    margin: -1px 0 0;
+    height: .1em;
+    width: .1em;
     border-radius: 50%;
 }
 
@@ -450,7 +461,7 @@ footer::before {
     border-style: solid;
     border-color: #000000;
     border-width: 0;
-    border-top-width: 1px;
+    border-top-width: .05em;
     width: calc((1700 / 1920)*100vw);
     margin: 0 auto;
     position: absolute;
@@ -465,5 +476,5 @@ footer::before {
     flex-direction: column;
     gap: calc((80 / 1920)*100vw);
     align-items: start;
-    margin: 0 0 0 85px;
+    margin: 0 0 0 calc((85 / 1920)*100vw);
 }
