@@ -50,7 +50,7 @@ h1 {
 h2 {
     font-size: min(36px, calc((36 / 1920)*100vw));
     font-weight: 500;
-    letter-spacing: 20%;
+    letter-spacing: .2em;
     line-height: calc((135 / 1920)*100vw);
     text-align: center;
 }
@@ -58,14 +58,14 @@ h2 {
 h3 {
     font-size: min(40px, calc((40 / 1920)*100vw));
     font-weight: 500;
-    letter-spacing: 25%;
+    letter-spacing: .25em;
     line-height: calc((80 / 1920)*100vw);
 }
 
 h4 {
     font-size: min(32px, calc((32 / 1920)*100vw));
     font-weight: 400;
-    letter-spacing: 25%;
+    letter-spacing: .25em;
     line-height: calc((80 / 1920)*100vw);
     text-align: center;
 }
@@ -74,7 +74,7 @@ h5 {
     color: #ffffff;
     font-size: min(24px, calc((24 / 1920)*100vw));
     font-weight: 400;
-    letter-spacing: 10%;
+    letter-spacing: .1em;
     line-height: calc((80 / 1920)*100vw);
     text-align: center;
 }
@@ -82,8 +82,18 @@ h5 {
 h6 {
     font-size: min(22px, calc((22 / 1920)*100vw));
     font-weight: 400;
-    letter-spacing: 10%;
+    letter-spacing: .1em;
     line-height: calc((50 / 1920)*100vw);
+}
+
+@media only screen and (min-width: 768px) {
+    h1:not(.maintitle) {
+        letter-spacing: .3em;
+    }
+
+    h6 {
+        letter-spacing: .05em;
+    }
 }
 
 a,
@@ -157,7 +167,6 @@ main {
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 1920px;
     height: 100%;
     margin: 0 auto;
 }
@@ -190,8 +199,8 @@ main {
 
 .scroll {
     position: absolute;
-    right: calc((80 / 1920)*100%);
-    bottom: calc((100 / 1087)*100%);
+    right: 3%;
+    top: calc((900 / 1080)*100%);
     z-index: 1;
 }
 
@@ -207,13 +216,18 @@ main {
     left: 50%;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
     .mainicon {
         border-width: .1px;
     }
 
     h1 {
         letter-spacing: .6em;
+    }
+
+    .scroll {
+        right: 8%;
+        top: calc((850 / 1080)*100%);
     }
 }
 
@@ -228,12 +242,12 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: calc((163 / 1920)*100vw);
+    gap: calc((100 / 1920)*100vw);
     width: 100%;
-    max-width: 1920px;
+    max-width: 1080px;
     height: 100%;
     margin: 0 auto;
-    padding: calc((390 / 1920)*100vw) 0;
+    padding: calc((300 / 1920)*100vw) 0;
 }
 
 .welcome h1 {
@@ -245,6 +259,7 @@ main {
     background-image: url(images/webforlio_bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    padding: calc((250 / 1920)*100vw) 0;
 }
 
 .works_content {
@@ -252,9 +267,9 @@ main {
     flex-direction: column;
     align-items: center;
     gap: calc((120 / 1920)*100vw);
-    padding: calc((250 / 1920)*100vw) 0;
-    width: 90%;
     margin: 0 auto;
+    max-width: 1080px;
+    position: relative;
 }
 
 .works_content h1 {
@@ -262,6 +277,7 @@ main {
 }
 
 .works_container {
+    width: 80%;
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -271,27 +287,30 @@ main {
 }
 
 .works_container_part {
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .works_container_part img {
-    width: calc((700 / 1920)*100vw);
+    height: auto;
     aspect-ratio: 4 / 3;
     background-color: #fff;
     border-radius: calc((80 / 1920)*100vw);
 }
 
 .information {
+    width: max-content;
     display: flex;
     margin: calc((10 / 1920)*100vw) 0 0;
+    gap: 25px;
 }
 
 .works_container_part h4 {
     color: #fff;
     font-weight: 500;
     text-align: start;
-    padding: calc((30 / 1920)*100vw) 0 0 calc((100 / 1920)*100vw);
+    padding: calc((30 / 1920)*100vw) 0 0;
 }
 
 .genre {
@@ -299,7 +318,6 @@ main {
     padding: 0 calc((34 / 1920)*100vw);
     align-content: center;
     border-radius: 80px;
-    margin: 0 calc((40 / 1920)*100vw) 0 calc((34 / 1920)*100vw);
 }
 
 .category {
@@ -345,7 +363,7 @@ main {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: calc((60 /1920)*100vw);
+    gap: calc((50 /1920)*100vw);
 }
 
 .me img {
@@ -356,6 +374,7 @@ main {
     border-width: .05em;
     border-top-right-radius: 460px;
     border-top-left-radius: 460px;
+    box-shadow: 0 0 15px 5px #fff;
 }
 
 .lefttext {
