@@ -97,27 +97,27 @@ h6 {
     }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 440px) {
     h1 {
-        font-size: min(15px, calc((15 / 375)*100vw));
+        font-size: min(15px, calc((15 / 440)*100vw));
         letter-spacing: .5em;
     }
 
     h2 {
-        font-size: min(12px, calc((12 / 375)*100vw));
+        font-size: min(12px, calc((12 / 440)*100vw));
     }
 
     h3 {
-        font-size: min(11px, calc((11 / 375)*100vw));
+        font-size: min(11px, calc((11 / 440)*100vw));
     }
 
     h4 {
-        font-size: min(10px, calc((10 / 375)*100vw));
+        font-size: min(10px, calc((10 / 440)*100vw));
         line-height: 2em;
     }
 
     h5 {
-        font-size: min(11px, calc((11 / 375)*100vw));
+        font-size: min(11px, calc((11 / 440)*100vw));
         font-weight: 400;
         letter-spacing: .1em;
         line-height: calc((80 / 1920)*100vw);
@@ -125,7 +125,7 @@ h6 {
     }
 
     h6 {
-        font-size: min(10px, calc((10 / 375)*100vw));
+        font-size: min(10px, calc((10 / 440)*100vw));
         line-height: 2em;
     }
 }
@@ -182,7 +182,7 @@ ul {
     gap: calc((112 / 1920)*100vw);
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 440px) {
     .open {
         cursor: pointer;
         position: absolute;
@@ -355,7 +355,7 @@ main::before {
     left: 50%;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 440px) {
     .mainicon {
         border-width: .1px;
     }
@@ -387,7 +387,7 @@ main::before {
     letter-spacing: .4em;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 440px) {
     .welcome_content {
         gap: 50px;
         padding: 80px 0;
@@ -489,7 +489,7 @@ main::before {
     transform: translateX(calc((30 / 1920)*100vw));
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 440px) {
     #works {
         padding: 80px 0;
     }
@@ -568,7 +568,7 @@ main::before {
     gap: calc((60 /1920)*100vw);
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 440px) {
     .me {
         display: flex;
         flex-direction: column;
@@ -667,18 +667,18 @@ main::before {
     transform: translate(-57%, -50%);
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 440px) {
     .contact_lines {
         right: 0;
-        gap: calc((20 / 375)*100vw);
+        gap: calc((20 / 440)*100vw);
     }
 
     .contact_line {
-        width: calc((150 /375)*100vw);
+        width: calc((150 /440)*100vw);
     }
 
     .contact_lines .brank {
-        height: calc((17 / 375)*100vw);
+        height: calc((17 / 440)*100vw);
     }
 }
 
