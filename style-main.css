@@ -350,7 +350,7 @@ main::before {
 
 .scroll {
     position: absolute;
-    right: -8%;
+    right: 5vw;
     top: 80%;
     z-index: 1;
 }
