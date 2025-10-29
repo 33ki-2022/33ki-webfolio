@@ -100,6 +100,7 @@ h6 {
 @media only screen and (max-width: 440px) {
     h1 {
         font-size: min(17px, calc((17 / 440)*100vw));
+        font-weight: 500;
         letter-spacing: .5em;
     }
 
@@ -308,6 +309,10 @@ main::before {
     position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
+}
+
+#mainvisual h1 {
+    font-weight: 400;
 }
 
 .mainvisual_content {
@@ -718,6 +723,7 @@ main::before {
 
     #contact h2 {
         top: 60%;
+        font-weight: 500;
     }
 
     #contact h4 {
