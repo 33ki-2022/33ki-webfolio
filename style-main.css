@@ -99,20 +99,20 @@ h6 {
 
 @media only screen and (max-width: 440px) {
     h1 {
-        font-size: min(15px, calc((15 / 440)*100vw));
+        font-size: min(17px, calc((17 / 440)*100vw));
         letter-spacing: .5em;
     }
 
     h2 {
-        font-size: min(12px, calc((12 / 440)*100vw));
+        font-size: min(15px, calc((15 / 440)*100vw));
     }
 
     h3 {
-        font-size: min(11px, calc((11 / 440)*100vw));
+        font-size: min(12px, calc((12 / 440)*100vw));
     }
 
     h4 {
-        font-size: min(10px, calc((10 / 440)*100vw));
+        font-size: min(12px, calc((12 / 440)*100vw));
         line-height: 2em;
     }
 
@@ -125,7 +125,7 @@ h6 {
     }
 
     h6 {
-        font-size: min(10px, calc((10 / 440)*100vw));
+        font-size: min(11px, calc((11 / 440)*100vw));
         line-height: 2em;
     }
 }
@@ -183,6 +183,10 @@ ul {
 }
 
 @media only screen and (max-width: 440px) {
+    .menu {
+        height: 5vh;
+    }
+
     .open {
         cursor: pointer;
         position: absolute;
@@ -207,7 +211,7 @@ ul {
         display: grid;
         grid-template-columns: none;
         grid-template-rows: auto auto auto;
-        gap: calc((40 / 1920)*100vw);
+        gap: calc((100 / 1920)*100vw);
         margin: 20px 20px 0 0;
     }
 
@@ -219,6 +223,10 @@ ul {
         border-width: .5px;
         transform: translateY(-10px);
         transition: transform .5s;
+    }
+
+    li h4 {
+        font-size: min(15px, calc((15 / 440)*100vw));
     }
 
     li:nth-child(1) {
@@ -356,6 +364,14 @@ main::before {
 }
 
 @media only screen and (max-width: 440px) {
+    main {
+        margin: 5vh auto 0;
+    }
+
+    main::before {
+        top: 5vh;
+    }
+
     .mainicon {
         border-width: .1px;
     }
@@ -388,9 +404,13 @@ main::before {
 }
 
 @media only screen and (max-width: 440px) {
+    .welcome h1 {
+        letter-spacing: .3em;
+    }
+
     .welcome_content {
-        gap: 50px;
-        padding: 80px 0;
+        gap: 60px;
+        padding: 100px 0;
     }
 }
 
@@ -569,10 +589,14 @@ main::before {
 }
 
 @media only screen and (max-width: 440px) {
+    #about {
+        padding: 80px 0 100px;
+    }
+
     .me {
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 40px;
         width: 80%;
     }
 }
@@ -668,6 +692,10 @@ main::before {
 }
 
 @media only screen and (max-width: 440px) {
+    #contact {
+        margin: 0 auto 80px;
+    }
+
     .contact_lines {
         right: 0;
         gap: calc((20 / 440)*100vw);
@@ -729,4 +757,19 @@ footer::before {
 .fa-brands {
     color: #000000;
     font-size: calc((50 / 1920)*100vw);
+}
+
+@media only screen and (max-width: 440px) {
+    footer h4 {
+        font-size: min(15px, calc((15 / 440)*100vw));
+    }
+
+    .footer_container_sns {
+        gap: 20px;
+        width: 50px;
+    }
+
+    .fa-brands {
+        font-size: 20px;
+    }
 }
