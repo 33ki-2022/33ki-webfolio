@@ -514,6 +514,18 @@ main::before {
         padding: 80px 0;
     }
 
+    #works h4 {
+        font-size: min(18px, calc((18 / 440)*100vw));
+    }
+
+    #works h5 {
+        font-size: min(15px, calc((15 / 440)*100vw));
+    }
+
+    #works h5.genre {
+        font-size: min(13px, calc((13 / 440)*100vw));
+    }
+
     .works_container {
         display: flex;
         flex-direction: column;
@@ -704,6 +716,10 @@ main::before {
         top: 60%;
     }
 
+    #contact h4 {
+        font-size: min(14px, calc((14 / 440)*100vw));
+    }
+
     .contact_lines {
         display: none;
     }
@@ -773,6 +789,10 @@ footer::before {
 @media only screen and (max-width: 440px) {
     footer h4 {
         font-size: min(15px, calc((15 / 440)*100vw));
+    }
+
+    .footer_container {
+        margin: 0 0 0 30px;
     }
 
     .footer_container_sns {
