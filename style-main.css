@@ -696,9 +696,16 @@ main::before {
         margin: 0 auto 80px;
     }
 
+    #contact h1 {
+        margin: 0 0 30px;
+    }
+
+    #contact h2 {
+        top: 60%;
+    }
+
     .contact_lines {
-        right: 0;
-        gap: calc((20 / 440)*100vw);
+        display: none;
     }
 
     .contact_line {
@@ -707,6 +714,10 @@ main::before {
 
     .contact_lines .brank {
         height: calc((17 / 440)*100vw);
+    }
+
+    .brank {
+        height: 80px;
     }
 }
 
