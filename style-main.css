@@ -162,6 +162,10 @@ a:active {
     margin: 0 0 0 calc((108 / 1920)*100vw);
 }
 
+.menu h4 {
+    font-size: min(30px, calc((30 / 1920)*100vw));
+}
+
 #navbuttun {
     display: none;
 }
