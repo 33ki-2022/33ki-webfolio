@@ -230,8 +230,8 @@ ul {
         transition: transform .5s;
     }
 
-    li h4 {
-        font-size: min(15px, calc((15 / 440)*100vw));
+    .menu h4 {
+        font-size: min(18px, calc((18 / 440)*100vw));
     }
 
     li:nth-child(1) {
