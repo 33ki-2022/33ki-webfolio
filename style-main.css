@@ -257,17 +257,17 @@ ul {
         position: absolute;
         top: 9px;
         left: 30%;
-        width: 40%;
+        width: 50%;
         border-bottom: 1px solid #000000;
         transition: transform .5s;
     }
 
     .open::before {
-        transform: translateY(-2px);
+        transform: translateY(-4px);
     }
 
     .open::after {
-        transform: translateY(2px);
+        transform: translateY(4px);
     }
 
     #navbuttun:checked+.open::before {
@@ -620,6 +620,11 @@ main::before {
         gap: 40px;
         width: 80%;
     }
+
+    .me h6 {
+        font-size: min(13px, calc((13 / 440) * 100vw));
+        letter-spacing: 0em;
+    }
 }
 
 #contact {
@@ -715,6 +720,15 @@ main::before {
 @media only screen and (max-width: 440px) {
     #contact {
         margin: 0 auto 80px;
+    }
+
+    .contact_container {
+        column-gap: calc((60 / 440) * 100vw);
+        padding: 0;
+    }
+
+    .contact_container h4 {
+        letter-spacing: .1em;
     }
 
     #contact h1 {
