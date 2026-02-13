@@ -17,7 +17,7 @@ works.sort(
     <div class="works-grid">
       {works.map((post) => (
         <a href={`/works/${post.slug}`} class="card">
-          <img src={post.data.thumbnail} alt={post.data.title} />
+          <img src={`/${post.data.thumbnail}`} alt={post.data.title} />
 
           <div class="card-body">
             <p class="period">
