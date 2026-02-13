@@ -1,0 +1,116 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const works = await getCollection("works");
+
+// 新しい順に並べ替え
+works.sort(
+    (a, b) => b.data.startDate.getTime() - a.data.startDate.getTime()
+);
+---
+
+<Layout>
+  <section class="works">
+    <h1>Works</h1>
+
+    <div class="works-grid">
+      {works.map((post) => (
+        <a href={`/works/${post.slug}`} class="card">
+          <img src={post.data.thumbnail} alt={post.data.title} />
+
+          <div class="card-body">
+            <p class="period">
+                {post.data.startDate.toLocaleDateString("ja-JP")}
+                {post.data.endDate && (
+                    <>
+                    {" - "}
+                    {post.data.endDate.toLocaleDateString("ja-JP")}
+                    </>
+                )}
+            </p>
+
+            <h2>{post.data.title}</h2>
+
+            {post.data.description && (
+              <p class="description">
+                {post.data.description}
+              </p>
+            )}
+
+            <div class="tags">
+              {post.data.tags?.map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <style>
+    .works {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .card {
+      text-decoration: none;
+      color: inherit;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 24px;
+    }
+
+    .date {
+      font-size: 12px;
+      opacity: 0.6;
+      margin-bottom: 6px;
+    }
+
+    .description {
+      font-size: 14px;
+      margin: 12px 0;
+      line-height: 1.6;
+    }
+
+    .tags {
+      margin-top: 12px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 12px;
+      background: #f0f0f0;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-right: 6px;
+      margin-bottom: 6px;
+    }
+  </style>
+</Layout>

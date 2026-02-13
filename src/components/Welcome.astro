@@ -1,0 +1,526 @@
+---
+const { works } = Astro.props;
+---
+
+<div id="container">
+	<main>
+		
+		<section id="mainvisual">
+			<div class="mainvisual__cycle"></div>
+			<div class="mainvisual__title">
+				<h1>Port</h1>
+				<h1 class="righttext">folio</h1>
+			</div>
+		</section>
+
+		<section id="welcome">
+			<div class="welcome__bg"></div>
+			<div class="welcome__content">
+				<h2>Welcome to my Portfolio !</h2>
+				<p class="h3">ご覧いただき<br>ありがとうございます。</p>
+				<p class="h4">九州産業大学 芸術学部 ソーシャル<br>デザイン学科 情報デザイン専攻<br>ささきひなと申します。</p>
+			</div>
+		</section>
+
+		<section id="works">
+			<h2>Works</h2>
+			<div class="works-grid">
+				{works.map((post) => (
+				<a href={`/works/${post.slug}`} class="card">
+					<div class="card-bg-text">Click here　Click here　Click here</div>
+					<div class="card-body">
+						<p class="period">
+						{post.data.startDate.toLocaleDateString("ja-JP")}
+						{post.data.endDate && (
+							<>
+							{" - "}
+							{post.data.endDate.toLocaleDateString("ja-JP")}
+							</>
+						)}
+						</p>
+						<div class="card__text">
+							<h3>{post.data.title}</h3>
+							<p class="categories">{post.data.category}</p>
+							<div class="tags">
+								{post.data.tags?.map((tag) => (
+								<span class="tag">{tag}</span>
+								))}
+							</div>
+							{post.data.description && (
+								<p class="description">
+								{post.data.description}
+								</p>
+							)}
+
+						</div>
+					</div>
+					<img src={post.data.thumbnail} alt={post.data.title} />
+				</a>
+				))}
+			</div>
+
+			<a href="/works" class="viewmore">
+				<p>View more</p>
+				<p class="more">↑</p>
+			</a>
+		</section>
+
+		<section id="aboutme">
+			<h2>About me</h2>
+			<div class="about__container">
+				<div class="about__container__lefttext">
+					<div class="about__container__lefttext__name">
+						<h3 class="righttext">SASAKI HINA<br>佐々木陽菜</h3>
+					</div>
+					<div class="about__container__lefttext__text">
+						<p class="h4 righttext">2006年早生まれ。</p>
+						<p class="h4 righttext">好きな食べ物は<br>おじさんが好むようなおつまみです。</p>
+					</div>
+				</div>
+				<div class="about__container__img"></div>
+				<div class="about__container__righttext">
+					<div class="about__container__righttext__text">
+						<p class="h4">中学2年生の頃に動画編集を始め、<br>大学進学後から本格的に<br>デザインを学んでいます。</p>
+						<p class="h4">中学3年生ではYouTubeへの投稿を開始し、<br>高校3年生からは<br>熊本のバンドのロゴデザインを<br>担当しています。</p>
+					</div>
+					<a href="/about" class="about__container__righttext__more">
+						<p class="h3">View more</p>
+						<p class="more">↑</p>
+					</a>
+				</div>
+			</div>
+		</section>
+
+	</main>
+</div>
+
+<style>
+	.zen-kaku-gothic-new-light {
+		font-family: "Zen Kaku Gothic New", sans-serif;
+		font-weight: 300;
+		font-style: normal;
+	}
+
+	.zen-kaku-gothic-new-regular {
+		font-family: "Zen Kaku Gothic New", sans-serif;
+		font-weight: 400;
+		font-style: normal;
+	}
+
+	.zen-kaku-gothic-new-medium {
+		font-family: "Zen Kaku Gothic New", sans-serif;
+		font-weight: 500;
+		font-style: normal;
+	}
+
+	.passions-conflict-regular {
+		font-family: "Passions Conflict", cursive;
+		font-weight: 400;
+		font-style: normal;
+	}
+
+
+	* {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		text-decoration: none;
+		font-weight: 300;
+		box-sizing: border-box;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	img {
+		width: auto;
+		height: 100%;
+	}
+
+	body {
+		font-family: "Zen Kaku Gothic New", sans-serif;
+	}
+
+	h1 {
+		font-size: min(64px, calc((64 / 1440)*100vw));
+		font-weight: 300;
+		letter-spacing: .2em;
+	}
+
+	h2 {
+		font-size: min(32px, calc((32 / 1440)*100vw));
+		font-weight: 300;
+		letter-spacing: .3em;
+	}
+
+	.h3 {
+		font-size: min(24px, calc((24 / 1440)*100vw));
+		font-weight: 300;
+		letter-spacing: .05em;
+	}
+
+	.h4 {
+		font-size: min(16px, calc((16 / 1440)*100vw));
+		font-weight: 300;
+		letter-spacing: .15em;
+		line-height: 50px;
+	}
+
+	p,
+	li {
+		font-size: min(16px, calc((16 / 1440)*100vw));
+		font-weight: 300;
+		letter-spacing: .1em;
+	}
+
+	.righttext {
+		text-align: right;
+	}
+	.more {
+		transform: rotate(45deg);
+	}
+
+	a,
+	a:visited {
+		color: black;
+	}
+
+	a:hover {
+		color: #c9970d;
+	}
+
+	a:active {
+		color: #586AA8;
+	}
+
+	#mainvisual {
+		width: 100%;
+		height: 100vh;
+		position: relative;
+		z-index: 4;
+		background-image: url("/images/mainvisual-bg_image.webp");
+		background-size: 100% 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	#mainvisual::after {
+		content: '';
+		display: block;
+		width: 1px;
+		height: 100px;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		background-color: #000;
+	}
+	.mainvisual__cycle {
+		width: calc((360 / 1440)*100%);
+		aspect-ratio: 1 / 1;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		border: 1px solid #000;
+		border-radius: 1000px;
+	}
+	.mainvisual__title {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: calc((515 / 1440)*100%);
+		height: 250px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%)
+	}
+
+	#welcome {
+		position: relative;
+		background-color: #dfecf6;
+	}
+	.welcome__bg {
+		content: '';
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		z-index: 2;
+		background-color: #FFF;
+		border-bottom-left-radius: 100% 400px;
+		border-bottom-right-radius: 100% 400px;
+	}
+	.welcome__content {
+		display: flex;
+		flex-direction: column;
+		margin: 0 auto;
+		padding: 230px 0 350px;
+		width: 600px;
+		position: relative;
+		z-index: 3;
+	}
+	.welcome__content h2 {
+		margin-bottom: 100px;
+	}
+	.welcome__content p.h3 {
+		margin-bottom: 80px;
+	}
+	.welcome__content h2,
+	.welcome__content p {
+		text-align: center;
+	}
+	.welcome__content .h3 {
+		letter-spacing: 0.5em;
+		line-height: 60px;
+	}
+
+	#works {
+		padding: 200px 0;
+		width: 100%;
+		position: relative;
+		z-index: 2;
+		background-color: #dfecf6;
+	}
+	#works h2 {
+		padding: 0 0 0 120px;
+	}
+
+
+	.works-grid {
+		display: flex;
+		flex-direction: column;
+		padding: 110px 0 100px;
+	}
+	.card {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		padding: 50px;
+		height: 100%;
+		position: relative;
+		text-decoration: none;
+		color: inherit;
+		overflow: hidden;
+		border: .5px solid #586AA8;
+	}
+	.card::before {
+		content: '';
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		z-index: -1;
+		background-image: url("/images/webforlio_bg.jpg");
+		background-size: cover;
+		background-position: center;
+		background-repeat: repeat-x;
+		opacity: 0;
+		transition: 0.3s ease-in-out;
+	}
+	.card:hover::before {
+		opacity: 100%;;
+	}
+	.card:hover {
+		color: #FFF;
+	}
+	.card:hover .tags::before,
+	.card:hover .categories::before {
+		background-color: #FFF;
+	}
+	.card-bg-text {
+		position: absolute;
+		top: 50%;
+		left: 200px;
+		transform: translateY(-50%);
+		white-space: nowrap;
+		font-size: 80px;
+		font-weight: bold;
+		color: rgba(255, 255, 255, 0.05);
+		pointer-events: none;
+		opacity: 0;
+		font-family: "Passions Conflict"
+	}
+	.card:hover .card-bg-text {
+		opacity: 1;
+		animation: slideLoop 15s linear infinite;
+	}
+	@keyframes slideLoop {
+		0% {
+			transform: translate(-100%, -50%);
+		}
+		100% {
+			transform: translate(100%, -50%);
+		}
+	}
+	.card img {
+		width: calc((600 / 1440)*100%);
+		height: 300px;
+		position: relative;
+		z-index: 2;
+		object-fit: cover;
+	}
+	.card-body {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		height: 300px;
+	}
+	.date {
+		font-size: 13px;
+	}
+	.card__text {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+	.card__text h3 {
+		margin-bottom: 5px;
+		font-size: min(20px, calc((20 / 1440)*100vw));
+		font-weight: 400;
+		letter-spacing: .15em;
+	}
+	.tags,
+	.categories {
+		display: flex;
+		gap: 10px;
+		padding-left: 20px;
+		position: relative;
+		font-size: min(15px, calc((15 / 1440)*100vw));
+		font-weight: 300;
+		letter-spacing: .1em;
+	}
+	.tags::before,
+	.categories::before {
+		content: '';
+		display: block;
+		width: 5px;
+		height: 5px;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		background-color: #c9970d;
+		filter: blur(2px);
+	}
+	.categories::before {
+		background-color: #586AA8;
+	}
+	.description {
+		margin-top: 30px;
+		font-size: min(13px, calc((13 / 1440)*100vw));
+		font-weight: 300;
+		letter-spacing: .15em;
+	}
+
+	#works a {
+		align-items: center;
+	}
+	.viewmore {
+		display: flex;
+		justify-content: center;
+		gap: 15px;
+		padding: 14px 70px 14px 90px;
+		margin: 0 auto;
+		width: 300px;
+		position: relative;
+		border: 1px solid #000;
+		border-radius: 100px;
+		transition: 0.3s ease-in-out;
+	}
+	.viewmore:hover {
+		color: #ffffff;
+		background-color: #586AA8;
+		border: 1px solid rgba(0, 0, 0, 0);
+	}
+
+
+
+	#aboutme {
+		width: 100%;
+		background-color: #FFF;
+	}
+	#aboutme::before {
+		content: '';
+		width: 100%;
+		height: 100px;
+		position: absolute;
+		z-index: 3;
+		background-color: #dfecf6;
+		mask-image: linear-gradient(to bottom, #FFF, transparent);
+	}
+	#aboutme h2 {
+		padding: 140px 0 0 120px;
+		position: relative;
+		z-index: 4;
+	}
+	.about__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		margin: 0 auto;
+		padding: 160px 0 350px;
+		width: calc((1040 / 1440)*100%);
+		position: relative;
+		z-index: 3;
+	}
+	.about__container__img {
+		width: 300px;
+		height: 430px;
+		position: relative;
+		z-index: 4;
+		background-image: url("/images/aboutme.jpg");
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		border-radius: 200px 200px 0 0;
+	}
+	.about__container p.h4 {
+		font-size: min(16px, calc((16 / 1440)*100vw));
+		font-weight: 300;
+		letter-spacing: .1em;
+		line-height: 40px;
+	}
+	.about__container__lefttext {
+		display: flex;
+		flex-direction: column;
+		gap: 100px;
+	}
+	.about__container__lefttext__name h3 {
+		font-size: min(20px, calc((20 / 1440)*100vw));
+		font-weight: 400;
+		letter-spacing: .15em;
+		line-height: 37px;
+	}
+	.about__container__lefttext__text,
+	.about__container__righttext__text {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+	}
+	.about__container__righttext__more {
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		gap: 15px;
+		margin-top: 50px;
+		padding: 10px 15px 10px 25px;
+		width: 200px;
+		border: 1px solid #000;
+		border-radius: 100px;
+		transition: 0.3s ease-in-out;
+	}
+	.about__container__righttext__more:hover {
+		color: #ffffff;
+		background-color: #586AA8;
+		border: 1px solid rgba(0, 0, 0, 0);
+	}
+	.about__container__righttext__more p.h3 {
+		font-size: min(16px, calc((16 / 1440)*100vw));
+		font-weight: 300;
+		letter-spacing: .1em;
+	}
+	
+</style>
