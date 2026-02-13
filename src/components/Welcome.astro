@@ -59,7 +59,7 @@ const { works } = Astro.props;
 				))}
 			</div>
 
-			<a href="/works" class="viewmore">
+			<a href={`${import.meta.env.BASE_URL}works/`} class="viewmore">
 				<p>View more</p>
 				<p class="more">↑</p>
 			</a>
