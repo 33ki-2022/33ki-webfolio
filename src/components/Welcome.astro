@@ -54,7 +54,7 @@ const { works } = Astro.props;
 
 						</div>
 					</div>
-					<img src={post.data.thumbnail} alt={post.data.title} />
+					<img src={`${import.meta.env.BASE_URL}${post.data.thumbnail}`} alt={post.data.title} />
 				</a>
 				))}
 			</div>
