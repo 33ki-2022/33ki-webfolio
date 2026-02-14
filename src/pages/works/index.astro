@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const works = await getCollection("works");
+const base = import.meta.env.BASE_URL;
 
 // 新しい順に並べ替え
 works.sort(
@@ -16,8 +17,8 @@ works.sort(
 
     <div class="works-grid">
       {works.map((post) => (
-        <a href={`/works/${post.slug}`} class="card">
-          <img src={`/${post.data.thumbnail}`} alt={post.data.title} />
+        <a href={`${import.meta.env.BASE_URL}works/${post.slug}/`} class="card">
+          <img src={`${base}${post.data.thumbnail}`}　alt={post.data.title} />
 
           <div class="card-body">
             <p class="period">

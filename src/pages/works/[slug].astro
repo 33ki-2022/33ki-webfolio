@@ -1,0 +1,66 @@
+---
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const works = await getCollection("works");
+
+  return works.map((work) => ({
+    params: { slug: work.slug },
+    props: { work },
+  }));
+}
+
+const { work } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{work.data.title}</title>
+  </head>
+  <body>
+    <a href={`${base}works/`}>← Back to Works</a>
+
+    <h1>{work.data.title}</h1>
+
+    <p>
+      {work.data.startDate?.toLocaleDateString("ja-JP")}
+    </p>
+
+    <img
+      src={`${base}${work.data.thumbnail}`}
+      alt={work.data.title}
+    />
+    <h2>Gallery</h2>
+    {work.data.gallery?.map((img) => (
+    <img src={`${base}${img}`} />
+    ))}
+
+    <p>{work.data.description}</p>
+
+    <h2>工夫点</h2>
+    <ul>
+    {work.data.improvements?.map((item) => (
+        <li>{item}</li>
+    ))}
+    </ul>
+
+    <h2>課題点</h2>
+    <ul>
+    {work.data.challenges?.map((item) => (
+        <li>{item}</li>
+    ))}
+    </ul>
+
+    <div>
+      {work.data.tags?.map((tag) => (
+        <span>{tag}</span>
+      ))}
+    </div>
+
+    <article>
+      {work.body}
+    </article>
+  </body>
+</html>

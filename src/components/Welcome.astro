@@ -1,5 +1,6 @@
 ---
 const { works } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 
 <div id="container">
@@ -26,7 +27,7 @@ const { works } = Astro.props;
 			<h2>Works</h2>
 			<div class="works-grid">
 				{works.map((post) => (
-				<a href={`/works/${post.slug}`} class="card">
+				<a href={`${base}works/${post.slug}/`} class="card">
 					<div class="card-bg-text">Click here　Click here　Click here</div>
 					<div class="card-body">
 						<p class="period">
@@ -214,6 +215,26 @@ const { works } = Astro.props;
 		left: 50%;
 		transform: translateX(-50%);
 		background-color: #000;
+		animation: line-flow 2s ease-in-out infinite;
+    	transform-origin: top;
+	}
+	@keyframes line-flow {
+		0% {
+			transform: translateX(-50%) scaleY(0); /* 最初は長さ0 */
+			transform-origin: top;
+		}
+		45% {
+			transform: translateX(-50%) scaleY(1); /* 最大まで伸びる */
+			transform-origin: top;
+		}
+		55% {
+			transform: translateX(-50%) scaleY(1); /* 少しの間、最大の長さを維持 */
+			transform-origin: bottom; /* 基点を下に切り替える */
+		}
+		100% {
+			transform: translateX(-50%) scaleY(0); /* 下に向かって消えていく */
+			transform-origin: bottom;
+		}
 	}
 	.mainvisual__cycle {
 		width: calc((360 / 1440)*100%);
