@@ -18,35 +18,47 @@ const base = import.meta.env.BASE_URL;
   <head>
     <meta charset="UTF-8" />
     <title>{work.data.title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap"
+			rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
   </head>
   <body>
-    <a href={`${base}works/`}>← Back to Works</a>
+    <a href={`${base}works/`}>◀︎ 作品一覧</a>
 
-    <h1>{work.data.title}</h1>
+    <h3>{work.data.title}</h3>
 
-    <p>
-      {work.data.startDate?.toLocaleDateString("ja-JP")}
+    <p class="period">
+      {work.data.startDate.toLocaleDateString("ja-JP")}
+      {work.data.endDate && (
+          <>
+          {" - "}
+          {work.data.endDate.toLocaleDateString("ja-JP")}
+          </>
+      )}
     </p>
 
     <img
       src={`${base}${work.data.thumbnail}`}
       alt={work.data.title}
     />
-    <h2>Gallery</h2>
+    <h4>Gallery</h4>
     {work.data.gallery?.map((img) => (
     <img src={`${base}${img}`} />
     ))}
 
     <p>{work.data.description}</p>
 
-    <h2>工夫点</h2>
+    <h4>工夫点</h4>
     <ul>
     {work.data.improvements?.map((item) => (
         <li>{item}</li>
     ))}
     </ul>
 
-    <h2>課題点</h2>
+    <h4>課題点</h4>
     <ul>
     {work.data.challenges?.map((item) => (
         <li>{item}</li>
@@ -64,3 +76,82 @@ const base = import.meta.env.BASE_URL;
     </article>
   </body>
 </html>
+
+<style>
+  .zen-kaku-gothic-new-light {
+		font-family: "Zen Kaku Gothic New", sans-serif;
+		font-weight: 300;
+		font-style: normal;
+	}
+
+	.zen-kaku-gothic-new-regular {
+		font-family: "Zen Kaku Gothic New", sans-serif;
+		font-weight: 400;
+		font-style: normal;
+	}
+
+	.zen-kaku-gothic-new-medium {
+		font-family: "Zen Kaku Gothic New", sans-serif;
+		font-weight: 500;
+		font-style: normal;
+	}
+
+  * {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		text-decoration: none;
+		font-weight: 300;
+		box-sizing: border-box;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	img {
+		width: auto;
+		height: 100%;
+	}
+
+	body {
+		font-family: "Zen Kaku Gothic New", sans-serif;
+	}
+
+  h2 {
+    font-size: min(32px, calc((32 / 1440)*100vw));
+    font-weight: 300;
+    letter-spacing: .3em;
+  }
+
+	h3 {
+		font-size: min(24px, calc((24 / 1440)*100vw));
+		font-weight: 300;
+		letter-spacing: .05em;
+	}
+
+	p,
+	li {
+		font-size: min(16px, calc((16 / 1440)*100vw));
+		font-weight: 300;
+		letter-spacing: .1em;
+	}
+
+	.more {
+		transform: rotate(45deg);
+	}
+
+	a,
+	a:visited {
+		color: black;
+		transition: .2s ease-in-out;
+	}
+
+	a:hover {
+		color: #c9970d;
+	}
+
+	a:active {
+		color: #586AA8;
+	}
+</style>

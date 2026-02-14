@@ -1,5 +1,5 @@
 ---
-title: "映像作品「objective」 / subjective」"
+title: "映像作品「objective / subjective」"
 startDate: 2025-03-13
 endDate: 2025-05-15
 year: 2025

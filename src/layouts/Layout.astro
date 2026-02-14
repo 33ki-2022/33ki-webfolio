@@ -39,21 +39,25 @@
 		<footer>
 			<div id="footer">
 				<div class="footer__container">
-					<div class="footer__container__content">
-						<h4>Works</h4>
-						<h4 class="more">↑</h4>
-					</div>
+					<a href={`${import.meta.env.BASE_URL}works/`}>
+						<div class="footer__container__content">
+							<h4>Works</h4>
+							<h4 class="more">↑</h4>
+						</div>
+					</a>
 					<div class="footer__container__content">
 						<h4>About</h4>
 						<h4 class="more"4>↑</h4>
 					</div>
-					<div class="footer__container__content">
-						<h4>Contant</h4>
-						<div class="footer__container__content__contact">
-							<h3>33ki.2022@gmail.com</h3>
-							<h4 class="more">↑</h4>
+					<a href="mailto:33ki.2022@gmail.com">
+						<div class="footer__container__content">
+							<h4>Contant</h4>
+							<div class="footer__container__content__contact">
+								<h3>33ki.2022@gmail.com</h3>
+								<h4 class="more">↑</h4>
+							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="footer__other">
 					<p class="copyright">&copy; 2026 33ki_</p>
@@ -138,6 +142,7 @@
 	a,
 	a:visited {
 		color: black;
+		transition: .2s ease-in-out;
 	}
 
 	a:hover {
