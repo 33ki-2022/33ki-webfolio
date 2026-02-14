@@ -5,7 +5,8 @@ endDate: 2024-12-22
 year: 2024
 thumbnail: "images/work/WinterFlower.webp"
 tags: ["AfterEffects","Illustrator","AviUtil"]
-category: "Movie"
+categories:
+  - Movie
 description: "Vtuberの方からご依頼をいただき、歌ってみたのMVを制作しました。"
 ---
 

@@ -17,9 +17,9 @@ const base = import.meta.env.BASE_URL;
 		<section id="welcome">
 			<div class="welcome__bg"></div>
 			<div class="welcome__content">
-				<h2>Welcome to my Portfolio !</h2>
-				<p class="h3">ご覧いただき<br>ありがとうございます。</p>
-				<p class="h4">九州産業大学 芸術学部 ソーシャル<br>デザイン学科 情報デザイン専攻<br>ささきひなと申します。</p>
+				<h2 class="fade scroll-trigger">Welcome to my Portfolio !</h2>
+				<p class="h3 fade scroll-trigger">ご覧いただき<br>ありがとうございます。</p>
+				<p class="h4 fade scroll-trigger">九州産業大学 芸術学部 ソーシャル<br>デザイン学科 情報デザイン専攻<br>ささきひなと申します。</p>
 			</div>
 		</section>
 
@@ -27,7 +27,7 @@ const base = import.meta.env.BASE_URL;
 			<h2>Works</h2>
 			<div class="works-grid">
 				{works.map((post) => (
-				<a href={`${base}works/${post.slug}/`} class="card">
+				<a href={`${base}works/${post.slug}/`} class="card scroll-trigger">
 					<div class="card-bg-text">Click here　Click here　Click here</div>
 					<div class="card-body">
 						<p class="period">
@@ -82,7 +82,7 @@ const base = import.meta.env.BASE_URL;
 				<div class="about__container__righttext">
 					<div class="about__container__righttext__text">
 						<p class="h4">中学2年生の頃に動画編集を始め、<br>大学進学後から本格的に<br>デザインを学んでいます。</p>
-						<p class="h4">中学3年生ではYouTubeへの投稿を開始し、<br>高校3年生からは<br>熊本のバンドのロゴデザインを<br>担当しています。</p>
+						<p class="h4">中学3年生でYouTubeへの投稿を開始し、<br>大学生からは<br>個人で依頼を受けたり、バイトなどで<br>Webや映像の経験を積んでいます。</p>
 					</div>
 					<a href="/about" class="about__container__righttext__more">
 						<p class="h3">View more</p>
@@ -194,6 +194,18 @@ const base = import.meta.env.BASE_URL;
 	a:active {
 		color: #586AA8;
 	}
+
+	.fade {
+		opacity: 0;
+		filter: blur(10px);
+		transition: 0.8s ease-in-out;
+	}
+
+	.fade.is-visible {
+		opacity: 1;
+		filter: blur(0px);
+	}
+
 
 	#mainvisual {
 		width: 100%;
@@ -324,6 +336,15 @@ const base = import.meta.env.BASE_URL;
 		color: inherit;
 		overflow: hidden;
 		border: .5px solid #586AA8;
+		opacity: 1;
+		transform: translateY(20px);
+		filter: blur(5px);
+		transition: 0.8s ease-in-out;
+	}
+	.card.is-visible {
+		opacity: 1;
+		transform: translateY(0) ;
+		filter: blur(0px);
 	}
 	.card::before {
 		content: '';
@@ -545,3 +566,19 @@ const base = import.meta.env.BASE_URL;
 	}
 	
 </style>
+
+<script>
+  const elements = document.querySelectorAll('.scroll-trigger');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  elements.forEach((el) => observer.observe(el));
+</script>

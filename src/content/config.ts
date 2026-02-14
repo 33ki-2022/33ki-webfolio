@@ -9,7 +9,7 @@ const works = defineCollection({
     thumbnail: z.string(),
     description: z.string().optional(),
     tags: z.array(z.string()).optional(),
-    category: z.string(),
+    categories: z.array(z.string()),
   }),
 });
 

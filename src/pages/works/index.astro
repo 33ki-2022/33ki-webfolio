@@ -13,50 +13,80 @@ works.sort(
 
 <Layout>
   <section class="works">
-    <h1>Works</h1>
+    <div class="works__inner">
+        <h2>Works</h2>
+        <div class="filter">
+            <button data-filter="all">All</button>
+            <button data-filter="Movie">Movie</button>
+            <button data-filter="Exhibit">Exhibit</button>
+            <button data-filter="Web">Web</button>
+        </div>
+        <div class="works-grid">
+        {works.map((post) => (
+            <a href={`${import.meta.env.BASE_URL}works/${post.slug}/`} class="card" data-category={`${post.data.categories?.join(',')}`}>
+            <img src={`${base}${post.data.thumbnail}`} alt={post.data.title} />
 
-    <div class="works-grid">
-      {works.map((post) => (
-        <a href={`${import.meta.env.BASE_URL}works/${post.slug}/`} class="card">
-          <img src={`${base}${post.data.thumbnail}`}　alt={post.data.title} />
+            <div class="card-body">
+                <p class="period">
+                    {post.data.startDate.toLocaleDateString("ja-JP")}
+                    {post.data.endDate && (
+                        <>
+                        {" - "}
+                        {post.data.endDate.toLocaleDateString("ja-JP")}
+                        </>
+                    )}
+                </p>
 
-          <div class="card-body">
-            <p class="period">
-                {post.data.startDate.toLocaleDateString("ja-JP")}
-                {post.data.endDate && (
-                    <>
-                    {" - "}
-                    {post.data.endDate.toLocaleDateString("ja-JP")}
-                    </>
+                <h3 class="card__text">{post.data.title}</h3>
+                <p class="categories">{post.data.categories?.join(', ')}</p>
+                <div class="tags">
+                {post.data.tags?.map((tag) => (
+                    <span class="tag">{tag}</span>
+                ))}
+                </div>
+
+                {post.data.description && (
+                <p class="description">
+                    {post.data.description}
+                </p>
                 )}
-            </p>
-
-            <h2>{post.data.title}</h2>
-
-            {post.data.description && (
-              <p class="description">
-                {post.data.description}
-              </p>
-            )}
-
-            <div class="tags">
-              {post.data.tags?.map((tag) => (
-                <span class="tag">{tag}</span>
-              ))}
             </div>
-          </div>
-        </a>
-      ))}
+            </a>
+        ))}
+        </div>
     </div>
   </section>
 
   <style>
-    .works {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 60px 20px;
+    h2 {
+        font-size: min(32px, calc((32 / 1440)*100vw));
+        font-weight: 300;
+        letter-spacing: .3em;
     }
+    .works {
+      background-color: #dfecf6;
+    }
+    .works__inner {
+      margin: 0 auto;
+      padding: 100px 20px;
+      width: calc((1200 / 1440)*100%);
+      max-width: 1200px;
 
+    }
+    .filter {
+        display: flex;
+        gap: 15px;
+    }
+    .filter button {
+        padding: 15px 30px;
+        border: none;
+        border-radius: 100px;
+        color: #fff;
+        background-color: #586AA8;
+    }
+    .filter button:hover {
+        background-color: #c9970d;
+    }
     .works-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -67,15 +97,18 @@ works.sort(
     .card {
       text-decoration: none;
       color: inherit;
-      border-radius: 20px;
       overflow: hidden;
       background: #fff;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
       transition: 0.3s ease;
+    }
+    .card.hide {
+    display: none;
+        transform: scale(0.95);
+        pointer-events: none;
     }
 
     .card:hover {
-      transform: translateY(-8px);
+      transform: scale(103%);
     }
 
     .card img {
@@ -83,35 +116,75 @@ works.sort(
       height: 240px;
       object-fit: cover;
     }
-
     .card-body {
       padding: 24px;
     }
-
-    .date {
+    .period {
       font-size: 12px;
-      opacity: 0.6;
+      letter-spacing: .1em;
       margin-bottom: 6px;
-    }
-
+    }    
+    h3.card__text {
+		margin-bottom: 5px;
+		font-size: min(20px, calc((20 / 1440)*100vw));
+		font-weight: 400;
+		letter-spacing: .1em;
+	}
+    .tags,
+	.categories {
+        display: flex;
+		gap: 10px;
+		padding-left: 20px;
+		position: relative;
+		font-size: min(15px, calc((15 / 1440)*100vw));
+		font-weight: 300;
+		letter-spacing: .1em;
+	}
+	.tags::before,
+	.categories::before {
+        content: '';
+		display: block;
+		width: 5px;
+		height: 5px;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		background-color: #c9970d;
+		filter: blur(2px);
+	}
+	.categories::before {
+        background-color: #586AA8;
+	}
     .description {
       font-size: 14px;
       margin: 12px 0;
       line-height: 1.6;
     }
+    </style>
 
-    .tags {
-      margin-top: 12px;
-    }
-
-    .tag {
-      display: inline-block;
-      font-size: 12px;
-      background: #f0f0f0;
-      padding: 4px 10px;
-      border-radius: 20px;
-      margin-right: 6px;
-      margin-bottom: 6px;
-    }
-  </style>
 </Layout>
+
+<script is:inline>
+    console.log("JS動いてる");
+
+  const buttons = document.querySelectorAll('.filter button');
+  const cards = document.querySelectorAll('.card');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.filter;
+
+      cards.forEach(card => {
+        const categories = card.dataset.category
+          .split(',')
+          .map(c => c.trim());
+
+        if (filter === 'all' || categories.includes(filter)) {
+          card.classList.remove('hide');
+        } else {
+          card.classList.add('hide');
+        }
+      });
+    });
+  });
+</script>

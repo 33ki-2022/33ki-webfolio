@@ -5,7 +5,8 @@ endDate: 2025-10-10
 year: 2025
 thumbnail: "images/33ki_.jpg"
 tags: ["HTML","CSS","JavaScript"]
-category: "Web"
+categories:
+  - Web
 description: "コーディングのポジションでお手伝いさせていただきました。"
 ---
 

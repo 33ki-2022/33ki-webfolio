@@ -8,12 +8,13 @@ gallery:
   - images/work/Objective.webp
   - images/work/Objective.webp
 tags: ["AfterEffects","Illustrator"]
-category: "Movie"
+categories:
+  - Movie
+  - Exhibit
 description: "グループ展示「inside me ~私の世界~」で公開したモーショングラフィックスです。"
 improvements:
   - アニメーションで視線誘導
   - コントラストを強めて可読性向上
-
 challenges:
   - レスポンシブ調整が難しかった
   - 画像最適化に時間がかかった
