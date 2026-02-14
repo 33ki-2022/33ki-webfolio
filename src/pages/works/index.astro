@@ -38,7 +38,7 @@ works.sort(
                 </p>
 
                 <h3 class="card__text">{post.data.title}</h3>
-                <p class="categories">{post.data.categories?.join(', ')}</p>
+                <p class="categories">{post.data.categories?.join(' / ')}</p>
                 <div class="tags">
                 {post.data.tags?.map((tag) => (
                     <span class="tag">{tag}</span>
