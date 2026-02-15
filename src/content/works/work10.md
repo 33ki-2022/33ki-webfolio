@@ -1,0 +1,11 @@
+---
+title: "〈授業課題〉トランプマークデザイン"
+startDate: 2024-06-19
+endDate: 2024-07-13
+year: 2024
+thumbnail: "images/33ki_.jpg"
+tags: ["Illustrator"]
+categories:
+  - Design
+description: "授業で、ハート・クラブ・ダイア・スペードの4つのトランプマークを制作しました。"
+---
