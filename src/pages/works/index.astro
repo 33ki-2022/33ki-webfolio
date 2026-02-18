@@ -133,9 +133,9 @@ works.sort(
 		font-weight: 400;
 		letter-spacing: .1em;
 	}
-    .tags,
+  .tags,
 	.categories {
-        display: flex;
+    display: flex;
 		gap: 10px;
 		padding-left: 20px;
 		position: relative;
@@ -145,13 +145,14 @@ works.sort(
 	}
 	.tags::before,
 	.categories::before {
-        content: '';
+    content: '';
 		display: block;
 		width: 5px;
 		height: 5px;
 		position: absolute;
 		top: 50%;
 		left: 0;
+    transform: translateY(-50%);
 		background-color: #c9970d;
 		filter: blur(2px);
 	}
@@ -163,6 +164,37 @@ works.sort(
       margin: 12px 0;
       line-height: 1.6;
     }
+
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: min(32px, calc((32 / 768)*100vw));
+    margin-bottom: 30px;
+  }
+  .filter {
+    flex-wrap: wrap;
+  }
+  .filter button {
+    padding: 10px 20px;
+  }
+  .works__inner {
+    padding: 100px 0;
+  }
+  h3.card__text {
+    margin-bottom: 5px;
+    font-size: min(35px, calc((35 / 768) * 100vw));
+  }
+  .tags,
+	.categories {
+		gap: 5px;
+		padding-left: 15px;
+		font-size: min(20px, calc((20 / 768)*100vw));
+	}
+	.tags::before,
+	.categories::before {
+		width: 3px;
+		height: 3px;
+	}
+}
     </style>
 
 </Layout>
