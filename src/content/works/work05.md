@@ -1,5 +1,5 @@
 ---
-title: "串カツ田中 LP制作"
+title: "LP制作"
 startDate: 2025-10-10
 endDate: 2025-10-10
 year: 2025
