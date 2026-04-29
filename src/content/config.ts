@@ -9,10 +9,12 @@ const works = defineCollection({
     thumbnail: z.string(),
     youtube: z.array(z.string()).optional(),
     description: z.string().optional(),
+    detail: z.string().optional(),
     improvements: z.array(z.string()).optional(),
     challenges: z.array(z.string()).optional(),
     tags: z.array(z.string()).optional(),
     categories: z.array(z.string()),
+    gallery: z.array(z.string()).optional(),
   }),
 });
 

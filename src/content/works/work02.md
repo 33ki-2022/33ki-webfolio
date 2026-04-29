@@ -3,7 +3,7 @@ title: "歌ってみたMV制作"
 startDate: 2024-10-28
 endDate: 2024-12-22
 year: 2024
-thumbnail: "images/work/WinterFlower.webp"
+thumbnail: "images/work/mv_voice.webp"
 youtube:
   -  iO5zdbfjyoo
 tags: ["AfterEffects","Illustrator","AviUtil"]
