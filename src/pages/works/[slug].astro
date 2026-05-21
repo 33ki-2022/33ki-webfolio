@@ -327,7 +327,7 @@ const base = import.meta.env.BASE_URL;
 		display: flex;
 		gap: 10px;
 		margin-bottom: 10px;
-		padding-left: 20px;
+		padding-left: 15px;
 		position: relative;
 		font-size: min(20px, calc((20 / 1440)*100vw));
 		font-weight: 300;
@@ -342,12 +342,13 @@ const base = import.meta.env.BASE_URL;
 		position: absolute;
 		top: 50%;
 		left: 0;
+		transform: translateY(-50% + 3px);
 		background-color: #c9970d;
-		filter: blur(2px);
+		/* filter: blur(2px); */
 		transition: 0.8s ease-in-out;
 	}
 	.categories::before {
-		background-color: #586AA8;
+		background-color: #092e45;
 	}
 	.thumbnail img {
 		width: 100%;

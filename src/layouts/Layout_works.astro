@@ -22,12 +22,6 @@
 		<header>
            <div id="header">
 				<p><a href={`${import.meta.env.BASE_URL}#mainvisual`}>33ki_</a></p>
-				<div class="header__nav">
-					<ul>
-						<li><a href={`${import.meta.env.BASE_URL}#works`}>Works</a></li>
-						<li><a href={`${import.meta.env.BASE_URL}#aboutme`}>About</a></li>
-					</ul>
-				</div>
 				<p><a href={`${import.meta.env.BASE_URL}#footer`}>Contact</a></p>
 		   </div>
         </header>
@@ -169,9 +163,6 @@ a:active {
 	backdrop-filter: blur(5px);
 	border-bottom: 0.5px solid #000;
 }
-#header a {
-	font-size: 16px;
-}
 .header__nav ul {
 	display: flex;
 	gap: 60px;
@@ -236,15 +227,7 @@ p.copyright {
 	}
 	.header__nav ul {
 		display: flex;
-		gap: 20px;
-	}
-
-	#header a {
-	font-size: 16px;
-	font-weight: 500;
-	} 
-	#header .header__nav a {
-		font-weight: 400;
+		gap: 60px;
 	}
 
 	#footer {

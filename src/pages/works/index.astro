@@ -1,5 +1,5 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../../layouts/Layout_works.astro";
 import { getCollection } from "astro:content";
 
 const works = await getCollection("works");
@@ -67,28 +67,31 @@ works.sort(
         letter-spacing: .3em;
     }
     .works {
-      background-color: #dfecf6;
+      background-color: #F4F8FB;
     }
     .works__inner {
       margin: 0 auto;
-      padding: 100px 20px;
+      padding: 150px 20px;
       width: calc((1200 / 1440)*100%);
       max-width: 1200px;
 
     }
     .filter {
         display: flex;
+        flex-wrap: wrap;
         gap: 15px;
     }
     .filter button {
         padding: 15px 30px;
-        border: none;
+        border: 1px solid #092e45;
         border-radius: 100px;
-        color: #fff;
-        background-color: #586AA8;
+        color: #092e45;
+        background-color: #FFF;
+        transition: 0.3s ease;
     }
     .filter button:hover {
-        background-color: #c9970d;
+        color: #c9970d;
+        border: 1px solid #c9970d;
     }
     .works-grid {
       display: grid;
@@ -103,6 +106,7 @@ works.sort(
       overflow: hidden;
       background: #fff;
       transition: 0.3s ease;
+      border-radius: 50px 0 50px 0;
     }
     .card.hide {
     display: none;
@@ -137,7 +141,7 @@ works.sort(
 	.categories {
     display: flex;
 		gap: 10px;
-		padding-left: 20px;
+		padding-left: 15px;
 		position: relative;
 		font-size: min(15px, calc((15 / 1440)*100vw));
 		font-weight: 300;
@@ -152,12 +156,12 @@ works.sort(
 		position: absolute;
 		top: 50%;
 		left: 0;
-    transform: translateY(-50%);
+    transform: translateY(-30%);
 		background-color: #c9970d;
-		filter: blur(2px);
+		/* filter: blur(2px); */
 	}
 	.categories::before {
-        background-color: #586AA8;
+        background-color: #092e45;
 	}
     .description {
       font-size: 14px;

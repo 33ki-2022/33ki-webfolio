@@ -28,7 +28,7 @@ const base = import.meta.env.BASE_URL;
 			<div class="works-grid">
 				{works.map((post) => (
 				<a href={`${base}works/${post.slug}/`} class="card scroll-trigger">
-					<div class="card-bg-text">Click here　Click here　Click here</div>
+					<div class="card-bg-text">Click here　Click here　Click here　Click here　Click here　Click here</div>
 					<div class="card-body">
 						<p class="period">
 						{post.data.startDate.toLocaleDateString("ja-JP")}
@@ -193,7 +193,7 @@ const base = import.meta.env.BASE_URL;
 	}
 
 	a:active {
-		color: #586AA8;
+		color: #092e45;
 	}
 
 	.fade {
@@ -282,8 +282,8 @@ const base = import.meta.env.BASE_URL;
 		position: absolute;
 		z-index: 2;
 		background-color: #FFF;
-		border-bottom-left-radius: 100% 100px;
-		border-bottom-right-radius: 100% 100px;
+		/* border-bottom-left-radius: 100% 100px;
+		border-bottom-right-radius: 100% 100px; */
 	}
 	.welcome__content {
 		display: flex;
@@ -314,7 +314,7 @@ const base = import.meta.env.BASE_URL;
 		width: 100%;
 		position: relative;
 		z-index: 2;
-		background-color: #dfecf6;
+		background-color: #F4F8FB;
 	}
 	#works h2 {
 		padding: 0 0 0 120px;
@@ -324,7 +324,9 @@ const base = import.meta.env.BASE_URL;
 	.works-grid {
 		display: flex;
 		flex-direction: column;
-		padding: 110px 0 100px;
+		margin: 110px 0 0;
+		padding: 0 0 100px;
+		border-top: .5px solid #092e45;
 	}
 	.card {
 		display: flex;
@@ -337,11 +339,12 @@ const base = import.meta.env.BASE_URL;
 		text-decoration: none;
 		color: inherit;
 		overflow: hidden;
-		border: .5px solid #586AA8;
+		border: .5px solid #092e45;
+		border-top: none;
 		opacity: 1;
 		transform: translateY(20px);
 		filter: blur(5px);
-		transition: 0.8s ease-in-out;
+		transition: 0.5s ease-in-out;
 	}
 	.card.is-visible {
 		opacity: 1;
@@ -363,7 +366,7 @@ const base = import.meta.env.BASE_URL;
 		background-position: center;
 		background-repeat: repeat-x;
 		opacity: 0;
-		transition: 0.8s ease-in-out;
+		transition: 0.5s ease-in-out;
 	}
 	.card:hover::before {
 		opacity: 100%;;
@@ -390,7 +393,8 @@ const base = import.meta.env.BASE_URL;
 	}
 	.card:hover .card-bg-text {
 		opacity: 1;
-		animation: slideLoop 15s linear infinite;
+		animation: slideLoop 30s linear infinite;
+		animation-delay: -5s;
 	}
 	@keyframes slideLoop {
 		0% {
@@ -413,8 +417,11 @@ const base = import.meta.env.BASE_URL;
 		flex-direction: column;
 		height: 300px;
 	}
-	.date {
+	/* .date {
 		font-size: 13px;
+	} */
+	.period {
+		display: none;
 	}
 	.card__text {
 		display: flex;
@@ -431,7 +438,7 @@ const base = import.meta.env.BASE_URL;
 	.categories {
 		display: flex;
 		gap: 10px;
-		padding-left: 20px;
+		padding-left: 15px;
 		position: relative;
 		font-size: min(15px, calc((15 / 1440)*100vw));
 		font-weight: 300;
@@ -446,13 +453,13 @@ const base = import.meta.env.BASE_URL;
 		position: absolute;
 		top: 50%;
 		left: 0;
-		transform: translateY(-50%);
+		transform: translateY(-50% + 3px);
 		background-color: #c9970d;
-		filter: blur(2px);
-		transition: 0.8s ease-in-out;
+		/* filter: blur(2px); */
+		transition: 0.5s ease-in-out;
 	}
 	.categories::before {
-		background-color: #586AA8;
+		background-color: #092e45;
 	}
 	.description {
 		margin-top: 30px;
@@ -478,7 +485,7 @@ const base = import.meta.env.BASE_URL;
 	}
 	.viewmore:hover {
 		color: #ffffff;
-		background-color: #586AA8;
+		background-color: #092e45;
 		border: 1px solid rgba(0, 0, 0, 0);
 	}
 
@@ -494,7 +501,7 @@ const base = import.meta.env.BASE_URL;
 		height: 100px;
 		position: absolute;
 		z-index: 3;
-		background-color: #dfecf6;
+		background-color: #F4F8FB;
 		mask-image: linear-gradient(to bottom, #FFF, transparent);
 	}
 	#aboutme h2 {
@@ -560,7 +567,7 @@ const base = import.meta.env.BASE_URL;
 	}
 	.about__container__righttext__more:hover {
 		color: #ffffff;
-		background-color: #586AA8;
+		background-color: #092e45;
 		border: 1px solid rgba(0, 0, 0, 0);
 	}
 	.about__container__righttext__more p.h3 {
@@ -571,27 +578,29 @@ const base = import.meta.env.BASE_URL;
 
 	@media screen and (max-width: 768px) {
 		h1 {
-			font-size: min(64px, calc((70 / 768)*100vw));
+			font-size: min(70px, calc((70 / 768)*100vw));
+			font-weight: 400;
 		}
 
 		h2 {
-			font-size: min(32px, calc((40 / 768)*100vw));
+			font-size: min(50px, calc((50 / 768)*100vw));
 			font-weight: 400;
-			letter-spacing: .2em;
+			letter-spacing: .1em;
 		}
 
 		.h3 {
-			font-size: min(24px, calc((35 / 768)*100vw));
+			font-size: min(35px, calc((35 / 768)*100vw));
 		}
 
 		.h4 {
-			font-size: min(16px, calc((30 / 768)*100vw));
+			font-size: min(30px, calc((30 / 768)*100vw));
 			line-height: 30px;
 		}
 
 		p,
 		li {
-			font-size: min(20px, calc((30 / 768)*100vw));
+			font-size: min(30px, calc((30 / 768)*100vw));
+			font-weight: 400;
 		}
 
 
@@ -644,21 +653,26 @@ const base = import.meta.env.BASE_URL;
 		}
 		.card__text h3 {
 			margin-bottom: 5px;
-			font-size: min(25px, calc((35 / 768)*100vw));
+			font-size: min(40px, calc((40 / 768)*100vw));
 		}
 		.tags,
 		.categories {
 			padding-left: 12px;
-			font-size: min(18px, calc((25 / 768)*100vw));
+			font-size: min(30px, calc((30 / 768)*100vw));
+			font-weight: 400;
+		}
+		.tag {
+			font-weight: 400;
 		}
 		.tags::before,
 		.categories::before {
-			width: 3px;
-			height: 3px;
+			width: 5px;
+			height: 5px;
 		}
 		.description {
 			margin-top: 5px;
-			font-size: min(18px, calc((25 / 768)*100vw));
+			font-size: min(30px, calc((30 / 768)*100vw));
+			font-weight: 400;
 		}
 		.viewmore {
 			gap: 8px;
@@ -682,27 +696,32 @@ const base = import.meta.env.BASE_URL;
 		.about__container__righttext {
 			display: flex;
 			flex-direction: column;
-			align-items: center;
-			gap: 0;
+			gap: 20px;
 			width: 100%;
 		}
 		.about__container__lefttext__name h3 {
-			font-size: min(25px, calc((35 / 768) * 100vw));
+			font-size: min(35px, calc((35 / 768) * 100vw));
+			font-weight: 500;
 			text-align: left;
 			line-height: 20px;
 		}
 		.about__container p.h4 {
-			font-size: min(20px, calc((30 / 768) * 100vw));
+			margin: 20px 0 0;
+			font-size: min(30px, calc((30 / 768) * 100vw));
+			font-weight: 400;
+			text-align: left;
 			line-height: 20px;
 		}
 		.about__container__img {
 			width: 100%;
+			margin: -25% 0;
+			transform: scale(60%);
 		}
 		.about__container__lefttext__text,
 		.about__container__righttext__text {
 			display: flex;
 			flex-direction: column;
-			gap: 20px;
+			gap: 10px;
 			width: 100%;
 		}
 		.about__container__righttext__more {
