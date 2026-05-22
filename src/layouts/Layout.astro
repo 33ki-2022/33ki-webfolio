@@ -219,9 +219,16 @@ footer {
 	font-size: 20px;
 }
 p.copyright {
-	font-size: min(15px, calc((15 / 1440)*100vw));
+	font-size: min(20px, calc((20 / 1440)*100vw));
 	font-weight: 300;
 	letter-spacing: .05em;
+}
+
+
+@media screen and (max-width: 1000px) {
+	#footer {
+		width: calc((700 / 1000)*100%);
+	}
 }
 
 @media screen and (max-width: 768px) {
@@ -249,6 +256,8 @@ p.copyright {
 
 	#footer {
 		width: calc((500 / 768)*100%);
+		padding: 80px 0 100px;
+
 	}
 	p.copyright {
 		font-size: min(20px, calc((20 / 768)*100vw));

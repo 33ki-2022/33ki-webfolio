@@ -62,7 +62,6 @@ const base = import.meta.env.BASE_URL;
 
 			<a href={`${import.meta.env.BASE_URL}works/`} class="viewmore" target="_blank">
 				<p>View more</p>
-				<p class="more">↑</p>
 			</a>
 		</section>
 
@@ -86,7 +85,6 @@ const base = import.meta.env.BASE_URL;
 					</div>
 					<a href="/about" class="about__container__righttext__more">
 						<p class="h3">View more</p>
-						<p class="more">↑</p>
 					</a>
 				</div>
 			</div>
@@ -150,19 +148,19 @@ const base = import.meta.env.BASE_URL;
 	}
 
 	h2 {
-		font-size: min(32px, calc((32 / 1440)*100vw));
+		font-size: min(35px, calc((35 / 1440)*100vw));
 		font-weight: 300;
 		letter-spacing: .2em;
 	}
 
 	.h3 {
-		font-size: min(24px, calc((24 / 1440)*100vw));
+		font-size: min(30px, calc((30 / 1440)*100vw));
 		font-weight: 300;
 		letter-spacing: .05em;
 	}
 
 	.h4 {
-		font-size: min(16px, calc((16 / 1440)*100vw));
+		font-size: min(20px, calc((20 / 1440)*100vw));
 		font-weight: 300;
 		letter-spacing: .15em;
 		line-height: 50px;
@@ -170,16 +168,13 @@ const base = import.meta.env.BASE_URL;
 
 	p,
 	li {
-		font-size: min(16px, calc((16 / 1440)*100vw));
+		font-size: min(25px, calc((25 / 1440)*100vw));
 		font-weight: 300;
 		letter-spacing: .1em;
 	}
 
 	.righttext {
 		text-align: right;
-	}
-	.more {
-		transform: rotate(45deg);
 	}
 
 	a,
@@ -289,7 +284,7 @@ const base = import.meta.env.BASE_URL;
 		display: flex;
 		flex-direction: column;
 		margin: 0 auto;
-		padding: 230px 0 350px;
+		padding: 230px 0 200px;
 		width: 600px;
 		position: relative;
 		z-index: 3;
@@ -310,7 +305,7 @@ const base = import.meta.env.BASE_URL;
 	}
 
 	#works {
-		padding: 200px 0;
+		padding: 200px 0 100px;
 		width: 100%;
 		position: relative;
 		z-index: 2;
@@ -341,6 +336,8 @@ const base = import.meta.env.BASE_URL;
 		overflow: hidden;
 		border: .5px solid #092e45;
 		border-top: none;
+		border-left: none;
+		border-right: none;
 		opacity: 1;
 		transform: translateY(20px);
 		filter: blur(5px);
@@ -415,7 +412,6 @@ const base = import.meta.env.BASE_URL;
 		display: flex;
 		justify-content: space-between;
 		flex-direction: column;
-		height: 300px;
 	}
 	/* .date {
 		font-size: 13px;
@@ -430,7 +426,7 @@ const base = import.meta.env.BASE_URL;
 	}
 	.card__text h3 {
 		margin-bottom: 5px;
-		font-size: min(20px, calc((20 / 1440)*100vw));
+		font-size: min(30px, calc((30 / 1440)*100vw));
 		font-weight: 400;
 		letter-spacing: .15em;
 	}
@@ -440,7 +436,7 @@ const base = import.meta.env.BASE_URL;
 		gap: 10px;
 		padding-left: 15px;
 		position: relative;
-		font-size: min(15px, calc((15 / 1440)*100vw));
+		font-size: min(20px, calc((20 / 1440)*100vw));
 		font-weight: 300;
 		letter-spacing: .1em;
 	}
@@ -463,7 +459,7 @@ const base = import.meta.env.BASE_URL;
 	}
 	.description {
 		margin-top: 30px;
-		font-size: min(13px, calc((13 / 1440)*100vw));
+		font-size: min(20px, calc((20 / 1440)*100vw));
 		font-weight: 300;
 		letter-spacing: .15em;
 	}
@@ -475,7 +471,7 @@ const base = import.meta.env.BASE_URL;
 		display: flex;
 		justify-content: center;
 		gap: 15px;
-		padding: 14px 70px 14px 90px;
+		padding: 14px 0;
 		margin: 0 auto;
 		width: 300px;
 		position: relative;
@@ -513,15 +509,20 @@ const base = import.meta.env.BASE_URL;
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-end;
+		gap: 30px;
 		margin: 0 auto;
-		padding: 160px 0 350px;
+		padding: 100px 0 300px;
 		width: calc((1040 / 1440)*100%);
 		position: relative;
 		z-index: 3;
 	}
+	.about__container__lefttext__name {
+		font-size: min(30px, calc((50 / 1440)*100vw));
+		font-weight: 400;
+	}
 	.about__container__img {
 		width: 300px;
-		height: 430px;
+		height: 350px;
 		position: relative;
 		z-index: 4;
 		background-image: url("/images/aboutme.jpg");
@@ -531,10 +532,10 @@ const base = import.meta.env.BASE_URL;
 		border-radius: 200px 200px 0 0;
 	}
 	.about__container p.h4 {
-		font-size: min(16px, calc((16 / 1440)*100vw));
+		font-size: min(20px, calc((20 / 1440)*100vw));
 		font-weight: 300;
 		letter-spacing: .1em;
-		line-height: 40px;
+		line-height: 25px;
 	}
 	.about__container__lefttext {
 		display: flex;
@@ -559,7 +560,7 @@ const base = import.meta.env.BASE_URL;
 		align-items: flex-end;
 		gap: 15px;
 		margin-top: 50px;
-		padding: 10px 15px 10px 25px;
+		padding: 10px 0;
 		width: 200px;
 		border: 1px solid #000;
 		border-radius: 100px;
@@ -571,9 +572,107 @@ const base = import.meta.env.BASE_URL;
 		border: 1px solid rgba(0, 0, 0, 0);
 	}
 	.about__container__righttext__more p.h3 {
-		font-size: min(16px, calc((16 / 1440)*100vw));
+		font-size: min(25px, calc((25 / 1440)*100vw));
 		font-weight: 300;
 		letter-spacing: .1em;
+	}
+
+	@media screen and (max-width: 1000px) {
+		h1 {
+			font-size: min(70px, calc((70 / 1000)*100vw));
+			font-weight: 400;
+		}
+
+		h2 {
+			font-size: min(40px, calc((40 / 1000)*100vw));
+			letter-spacing: .1em;
+			font-weight: 400;
+		}
+
+		.h3 {
+			font-size: min(25px, calc((25 / 1000)*100vw));
+		}
+
+		.h4 {
+			font-size: min(30px, calc((20 / 1000)*100vw));
+		}
+
+		p,
+		li {
+			font-size: min(20px, calc((20 / 1000)*100vw));
+		}
+
+		.welcome__content {
+			padding: 200px 0 200px;
+		}
+
+		#works {
+			padding: 150px 0 100px;
+		}
+		.card-body {
+			width: 450px;
+		}
+		.card__text h3 {
+			font-size: min(30px, calc((30 / 1000)*100vw));
+		}
+		.tags,
+		.categories {
+			font-size: min(18px, calc((18 / 1000)*100vw));
+			font-weight: 400;
+		}
+		.tag {
+			font-weight: 400;
+		}
+		.description {
+			margin-top: 15px;
+			font-size: min(15px, calc((15 / 1000)*100vw));
+			font-weight: 400;
+		}
+
+		.about__container {
+			flex-direction: column;
+			gap: 20px;
+			align-items: center;
+			padding: 50px 0 80px;
+			width: calc((600 / 1000)*100%);
+		}
+		.about__container__lefttext,
+		.about__container__righttext {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+			width: 100%;
+		}
+		.about__container__lefttext__name h3 {
+			font-size: min(25px, calc((25 / 1000) * 100vw));
+			font-weight: 500;
+			text-align: left;
+			line-height: 40px;
+		}
+		.about__container p.h4 {
+			margin: 20px 0 0;
+			font-size: min(20px, calc((20 / 1000) * 100vw));
+			font-weight: 400;
+			line-height: 30px;
+		}
+		.about__container__img {
+			transform: scale(90%);
+		}
+		.about__container__lefttext__text{
+			gap: 5px;
+		}
+		.about__container__righttext__text {
+			display: none;
+		}
+		.about__container__righttext__more {
+			gap: 8px;
+			margin: 40px auto 0;
+			width: 300px;
+			border: .8px solid #000;
+		}
+		.about__container__righttext__more p.h3 {
+			font-size: min(20px, calc((30 / 1000)*100vw));
+		}
 	}
 
 	@media screen and (max-width: 768px) {
@@ -585,7 +684,6 @@ const base = import.meta.env.BASE_URL;
 		h2 {
 			font-size: min(50px, calc((50 / 768)*100vw));
 			font-weight: 400;
-			letter-spacing: .1em;
 		}
 
 		.h3 {
@@ -633,12 +731,16 @@ const base = import.meta.env.BASE_URL;
 		#works h2 {
 			padding: 0 0 0 40px;
 		}
+		#works a {
+			align-items: flex-start;
+		}
 		.works-grid {
-			padding: 40px 0;
+			margin: 50px 0 0;
+			padding-bottom: 40px;
 		}
 		.card {
 			flex-direction: column-reverse;
-			padding: 20px;
+			padding: 30px;
 			height: fit-content;
 		}
 		.card img {
@@ -646,6 +748,7 @@ const base = import.meta.env.BASE_URL;
 			height: 150px;
 		}
 		.card-body {
+			width: auto;
 			height: auto;
 		}
 		.card__text {
@@ -659,10 +762,6 @@ const base = import.meta.env.BASE_URL;
 		.categories {
 			padding-left: 12px;
 			font-size: min(30px, calc((30 / 768)*100vw));
-			font-weight: 400;
-		}
-		.tag {
-			font-weight: 400;
 		}
 		.tags::before,
 		.categories::before {
@@ -670,9 +769,7 @@ const base = import.meta.env.BASE_URL;
 			height: 5px;
 		}
 		.description {
-			margin-top: 5px;
-			font-size: min(30px, calc((30 / 768)*100vw));
-			font-weight: 400;
+			display: none;
 		}
 		.viewmore {
 			gap: 8px;
@@ -686,30 +783,21 @@ const base = import.meta.env.BASE_URL;
 			padding: 60px 0 0 40px;
 		}
 		.about__container {
-			flex-direction: column;
-			gap: 20px;
-			align-items: center;
-			padding: 50px 0 80px;
 			width: calc((600 / 786)*100%);
 		}
 		.about__container__lefttext,
 		.about__container__righttext {
 			display: flex;
 			flex-direction: column;
-			gap: 20px;
+			gap: 0;
 			width: 100%;
 		}
 		.about__container__lefttext__name h3 {
 			font-size: min(35px, calc((35 / 768) * 100vw));
-			font-weight: 500;
-			text-align: left;
 			line-height: 20px;
 		}
 		.about__container p.h4 {
-			margin: 20px 0 0;
 			font-size: min(30px, calc((30 / 768) * 100vw));
-			font-weight: 400;
-			text-align: left;
 			line-height: 20px;
 		}
 		.about__container__img {
@@ -717,19 +805,15 @@ const base = import.meta.env.BASE_URL;
 			margin: -25% 0;
 			transform: scale(60%);
 		}
-		.about__container__lefttext__text,
-		.about__container__righttext__text {
+		.about__container__lefttext__text {
 			display: flex;
 			flex-direction: column;
-			gap: 10px;
+			gap: 0;
 			width: 100%;
 		}
 		.about__container__righttext__more {
-			gap: 8px;
-			margin-top: 40px;
-			padding: 10px 20px;
+			margin-top: 0;
 			width: 150px;
-			border: .8px solid #000;
 		}
 		.about__container__righttext__more p.h3 {
 			font-size: min(20px, calc((30 / 768)*100vw));
