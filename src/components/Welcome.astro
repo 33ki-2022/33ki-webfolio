@@ -84,7 +84,7 @@ const base = import.meta.env.BASE_URL;
 						<p class="h4">中学2年生の頃に動画編集を始め、<br class="pc">大学進学後から本格的に<br class="pc">デザインを学んでいます。</p>
 						<p class="h4">中学3年生でYouTubeへの投稿を開始し、<br class="pc">大学生からは<br class="pc">個人で依頼を受けたり、バイトなどで<br class="pc">Webや映像の経験を積んでいます。</p>
 					</div>
-					<a href="/about" class="about__container__righttext__more">
+					<a href={`${import.meta.env.BASE_URL}aboutme/`} class="about__container__righttext__more">
 						<p class="h3">View more</p>
 					</a>
 				</div>
@@ -476,7 +476,7 @@ const base = import.meta.env.BASE_URL;
 		margin: 0 auto;
 		width: 300px;
 		position: relative;
-		border: 1px solid #000;
+		border: .5px solid #000;
 		border-radius: 100px;
 		transition: 0 ease-in-out;
 	}
@@ -533,7 +533,7 @@ const base = import.meta.env.BASE_URL;
 		border-radius: 200px 200px 0 0;
 	}
 	.about__container p.h4 {
-		font-size: min(20px, calc((20 / 1440)*100vw));
+		font-size: min(15px, calc((20 / 1440)*100vw));
 		font-weight: 300;
 		letter-spacing: .1em;
 		line-height: 25px;
@@ -563,7 +563,7 @@ const base = import.meta.env.BASE_URL;
 		margin-top: 50px;
 		padding: 10px 0;
 		width: 200px;
-		border: 1px solid #000;
+		border: .5px solid #000;
 		border-radius: 100px;
 		transition: 0.3s ease-in-out;
 	}
@@ -573,7 +573,7 @@ const base = import.meta.env.BASE_URL;
 		border: 1px solid rgba(0, 0, 0, 0);
 	}
 	.about__container__righttext__more p.h3 {
-		font-size: min(25px, calc((25 / 1440)*100vw));
+		font-size: min(20px, calc((20 / 1440)*100vw));
 		font-weight: 300;
 		letter-spacing: .1em;
 	}

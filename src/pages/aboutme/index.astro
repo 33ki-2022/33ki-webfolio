@@ -1,0 +1,41 @@
+---
+import Layout from "../../layouts/Layout_works.astro";
+---
+
+<Layout>
+    <section class="aboutme">
+        <div class="aboutme__inner">
+            <h2>About me</h2>
+            <div class="spacer"></div>
+            <p>coming soon...</p>
+        </div>
+    </section>
+</Layout>
+
+<style>
+    .spacer {
+        display: block;
+        height: 50px;
+    }
+    .aboutme {
+        background-color: #F4F8FB;
+    }
+    .aboutme__inner {
+        margin: 0 auto;
+        padding: 150px 20px;
+        width: calc((1200 / 1440) * 100%);
+        max-width: 1200px;
+    }
+    h2 {
+        font-size: min(32px, calc((32 / 1440)*100vw));
+        font-weight: 300;
+        letter-spacing: .2em;
+    }
+
+    @media screen and (max-width: 768px) {
+        h2 {
+            font-size: min(32px, calc((32 / 768)*100vw));
+            margin-bottom: 30px;
+        }
+    }
+</style>
