@@ -16,5 +16,5 @@ categories:
 #   - レスポンシブ調整が難しかった
 #   - 画像最適化に時間がかかった
 description: "今年で6年目！自身でシリーズ化しているNewYearMovieの2026年バージョンです。"
-detail: "細かい説明"
+detail: "今年で6年目！自身でシリーズ化しているNewYearMovieの2026年バージョンです。"
 ---

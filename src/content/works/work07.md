@@ -10,4 +10,5 @@ tags: ["AfterEffects","Photoshop"]
 categories:
   - Movie
 description: "中学生から作っている「文字PV」と言われるキネティックタイポグラフィーの作品です。"
+detail: "中学生から作っている「文字PV」と言われるキネティックタイポグラフィーの作品です。"
 ---

@@ -10,4 +10,5 @@ tags: ["AfterEffects","Illustrator","AviUtil"]
 categories:
   - Movie
 description: "Vtuberの方からご依頼をいただき、歌ってみたのMVを制作しました。"
+detail: "Vtuberの閃光ノルナさんからご依頼をいただき、歌ってみたのMVを制作しました。"
 ---

@@ -9,5 +9,6 @@ gallery:
   - images/work/arthaven.webp
 categories:
   - Other
-description: "芸術マガジン「アート天国」を編集人として制作しました。また、デッサンやグラフィックも掲載しています。"
+description: "芸術マガジン「アート天国」を編集人として制作しました。"
+detail: "芸術マガジン「アート天国」を編集人として制作しました。また、デッサンやグラフィックも掲載しています。"
 ---

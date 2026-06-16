@@ -10,4 +10,5 @@ tags: ["AfterEffects"]
 categories:
   - Movie
 description: "自身でシリーズ化しているNewYearMovieの2025年バージョンです。"
+detail: "自身でシリーズ化しているNewYearMovieの2025年バージョンです。"
 ---

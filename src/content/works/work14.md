@@ -11,4 +11,5 @@ gallery:
 categories:
   - Design
 description: "授業で、晴れ・曇り・雨・雪の4つのお天気アイコンを制作しました。"
+detail: "授業で、晴れ・曇り・雨・雪の4つのお天気アイコンを制作しました。"
 ---

@@ -10,4 +10,5 @@ gallery:
 categories:
   - 3DCG
 description: "高校生の時からマイペースに制作しているblenderでの3DCGです。"
+detail: "高校生の時からマイペースに制作しているblenderでの3DCGです。"
 ---

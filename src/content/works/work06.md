@@ -10,4 +10,5 @@ tags: ["AfterEffects","Illustrator"]
 categories:
   - Movie
 description: "ボカロPの方からご依頼をいただき、歌ってみたのMVを制作しました。"
+detail: "ボカロPの方からご依頼をいただき、歌ってみたのMVを制作しました。"
 ---

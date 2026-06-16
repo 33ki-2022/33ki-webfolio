@@ -10,4 +10,5 @@ gallery:
 categories:
   - Design
 description: "授業で、季節（春夏秋冬）をテーマにAdobe Illustrationを用いて平面構成の制作をしました。"
+detail: "授業で、季節（春夏秋冬）をテーマにAdobe Illustrationを用いて平面構成の制作をしました。"
 ---

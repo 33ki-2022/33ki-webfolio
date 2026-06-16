@@ -42,8 +42,9 @@ const youtubeCount = work.data.youtube?.length || 0;
 			<div class="spacer"></div>
 			
 			<div class:list={[
+				{ 'youtube00': youtubeCount === 0 },
 				{ 'youtube01': youtubeCount === 1 },
-				{ 'youtube02': youtubeCount === 2 },
+				{ 'youtube02': youtubeCount === 2 }
 				]}>
 				{work.data.youtube?.map((id) => (
 				<div class="video">
@@ -56,9 +57,10 @@ const youtubeCount = work.data.youtube?.length || 0;
 				))}
 			</div>
 			
-			<div class="spacer"></div>
+			<div class="spacer" class:list={[{ 'youtube00': youtubeCount === 0 }]}></div>
 			
 			<div class:list={[
+				{ 'gallery00': galleryCount === 0 },
 				{ 'gallery01': galleryCount === 1 },
 				{ 'gallery02': galleryCount === 2 },
 				{ 'gallery03': galleryCount === 3 },
@@ -69,16 +71,19 @@ const youtubeCount = work.data.youtube?.length || 0;
 				{ 'gallery08': galleryCount === 8 }
 			]}>
 				{work.data.gallery?.map((img) => (
-					<div class="garrey">
+					<div class="gallery">
 						<img style="display: block; width: 100%;" src={`${base}${img}`} />
 					</div>
-					<div class="spacer"></div>
 				))}
 			</div>
 
+			<div class="spacer" class:list={[{ 'gallery00': galleryCount === 0 }]}></div>
+
 			{work.data.detail && (
 			<section class="work-section">
-				<p>{work.data.detail}</p>
+				<div class="detail">
+					<p>{work.data.detail}</p>
+				</div>
 			</section>
 			)}
 			
@@ -114,6 +119,10 @@ const youtubeCount = work.data.youtube?.length || 0;
 		.spacer {
 			display: block;
 			height: 50px;
+		}
+		.youtube00,
+		.gallery00 {
+			display: none;
 		}
 
 		.wrap {
@@ -189,8 +198,20 @@ const youtubeCount = work.data.youtube?.length || 0;
 		.youtube02 .video iframe {
 			width: 95%;
 		}
-		.garrey {
+		.gallery {
 			width: calc((500/1000)*100%);
+			margin: 0 auto;
+		}
+		.gallery04 {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+			gap: 30px;
+			width: 100%;
+			margin: 0 auto;
+		}
+		.gallery04 .gallery {
+			width: 100%;
 			margin: 0 auto;
 		}
 		.work-section {
@@ -198,6 +219,9 @@ const youtubeCount = work.data.youtube?.length || 0;
 		}
 		.work-section ul {
 			padding-left: 20px;
+		}
+		.detail {
+			margin: 50px 0 0;
 		}
 		h4.improvements,
 		h4.challenges {

@@ -8,4 +8,5 @@ tags: ["HTML","CSS","JavaScript"]
 categories:
   - Web
 description: "コーディングのポジションでお手伝いさせていただきました。"
+detail: "コーディングのポジションでお手伝いさせていただきました。"
 ---

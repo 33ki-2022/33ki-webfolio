@@ -10,5 +10,6 @@ tags: ["AfterEffects"]
 categories:
   - Movie
   - Exhibit
-description: "グループ展示「lumunous」で展示した作品内のモーショングラフィックスです。"
+description: "グループ展示「luminous」で展示した作品内のモーショングラフィックスです。"
+detail: "グループ展示「luminous」で展示した作品内のモーショングラフィックスです。展示ではゴーストペッパーズという方法に挑戦し、映像表現の幅を研究しました。"
 ---

@@ -10,4 +10,5 @@ gallery:
 categories:
   - Design
 description: "バンドのロゴと、グッズのラバーバンドのロゴのデザインをしました。"
+detail: "バンドのロゴと、グッズのラバーバンドのロゴのデザインをしました。"
 ---
