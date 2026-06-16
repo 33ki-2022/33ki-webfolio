@@ -95,6 +95,19 @@ const base = import.meta.env.BASE_URL;
 </div>
 
 <style is:global>
+	.sp {
+		display: none;
+	}
+	.pc {
+		display: inline-block;
+	}
+	.view_sp {
+		display: none;
+	}
+	.view_pc {
+		display: block;
+	}
+
 	.zen-kaku-gothic-new-light {
 		font-family: "Zen Kaku Gothic New", sans-serif;
 		font-weight: 300;
@@ -676,6 +689,18 @@ const base = import.meta.env.BASE_URL;
 	}
 
 	@media screen and (max-width: 800px) {
+		.sp {
+		display: inline-block;
+		}
+		.pc {
+			display: none;
+		}
+		.view_sp {
+			display: block;
+		}
+		.view_pc {
+			display: none;
+		}
 	}
 
 	@media screen and (max-width: 480px) {
