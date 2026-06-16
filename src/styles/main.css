@@ -21,3 +21,33 @@ body {
   display:block;
   clear:both;
 }
+
+.view_pc {
+  display: block;
+}
+.view_sp {
+  display: none;
+}
+
+.pc {
+  display: inline-block;
+}
+.sp {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .view_pc {
+    display: none;
+  }
+  .view_sp {
+    display: block;
+  }
+
+  .pc {
+    display: none;
+  }
+  .sp {
+    display: inline-block;
+  }
+}
