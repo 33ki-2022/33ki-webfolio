@@ -1,5 +1,5 @@
 ---
-import Layout from "../../layouts/Layout_works.astro";
+import Layout from "../../layouts/Layout_aboutme.astro";
 ---
 
 <Layout>
@@ -13,12 +13,20 @@ import Layout from "../../layouts/Layout_works.astro";
 </Layout>
 
 <style>
+    h2 {
+        font-weight: 500;
+    }
+    p {
+        font-weight: 400;
+    }
+
     .spacer {
         display: block;
         height: 50px;
     }
     .aboutme {
         background-color: #F4F8FB;
+        height: 100vh;
     }
     .aboutme__inner {
         margin: 0 auto;
@@ -28,7 +36,6 @@ import Layout from "../../layouts/Layout_works.astro";
     }
     h2 {
         font-size: min(32px, calc((32 / 1440)*100vw));
-        font-weight: 300;
         letter-spacing: .2em;
     }
 
