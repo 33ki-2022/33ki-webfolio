@@ -3,7 +3,7 @@ title: "アート天国"
 startDate: 2024-12-06
 endDate: 2025-04-01
 year: 2024
-thumbnail: "images/work/arthaven.webp"
+thumbnail: "images/work/grid-arthaven.webp"
 tags: ["Illustrator","デッサン"]
 gallery:
   - images/work/arthaven.webp

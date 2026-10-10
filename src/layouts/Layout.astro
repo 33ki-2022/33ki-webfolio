@@ -260,9 +260,14 @@ p.copyright {
 }
 
 @media screen and (max-width: 768px) {
+	h3,
+	h4 {
+		font-weight: 400;
+	}
 	p,
 	li {
 		font-size: min(20px, calc((20 / 768)*100vw));
+		font-weight: 400;
 	}
 
 	#header {
@@ -275,11 +280,12 @@ p.copyright {
 	}
 
 	#header a {
-	font-size: 16px;
-	font-weight: 400;
+		font-size: 16px;
+		font-weight: 500;
 	} 
 	#header .header__nav a {
 		font-weight: 300;
+		font-weight: 400;
 	}
 
 	#footer {
@@ -292,8 +298,12 @@ p.copyright {
 	}
 	p.copyright {
 		font-size: min(20px, calc((20 / 768)*100vw));
-		font-weight: 300;
+		font-weight: 400;
 		letter-spacing: .05em;
+	}
+
+	.page__top__btn {
+		right: 15px;
 	}
 }
 </style>

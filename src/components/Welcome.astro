@@ -418,7 +418,7 @@ const base = import.meta.env.BASE_URL;
 	}
 	.card img {
 		width: 100%;
-		height: 300px;
+		height: auto;
 		position: relative;
 		z-index: 2;
 		object-fit: cover;
@@ -721,27 +721,32 @@ const base = import.meta.env.BASE_URL;
 		
 		h1 {
 			font-size: min(60px, calc((60 / 480)*100vw));
-			font-weight: 400;
 		}
 
 		h2 {
 			font-size: min(25px, calc((25 / 480)*100vw));
-			font-weight: 400;
+			font-weight: 500;
 		}
 
 		.h3 {
 			font-size: min(20px, calc((20 / 480)*100vw));
+			font-weight: 500;
 		}
 
 		.h4 {
 			font-size: min(18px, calc((18 / 480)*100vw));
 			line-height: 20px;
+			font-weight: 400;
 		}
 
 		p,
 		li {
 			font-size: min(20px, calc((20 / 480)*100vw));
 			font-weight: 400;
+		}
+
+		#mainvisual {
+			height: 80vh;
 		}
 
 		.mainvisual__title {
@@ -757,6 +762,7 @@ const base = import.meta.env.BASE_URL;
 
 		.welcome__content {
 			width: 80%;
+			padding: 150px 0;
 		}
 
 		.welcome__content h2,
@@ -794,14 +800,9 @@ const base = import.meta.env.BASE_URL;
 			gap: 10px;
 			font-size: min(20px, calc((20 / 480)*100vw));
 		}
-		.tag,
-		.categories {
-			font-weight: 300;
-		}
 		.description {
 			margin-top: 10px;
 			font-size: min(18px, calc((18 / 480)*100vw));
-			font-weight: 300;
 			letter-spacing: .1em;
 		}
 		.viewmore {
@@ -809,10 +810,11 @@ const base = import.meta.env.BASE_URL;
 			gap: 8px;
 			padding: 10px 0;
 			width: calc((600 / 1000) * 100%);
+			border: 1px solid #000;
 		}
 		.viewmore p {
 			font-size: min(20px, calc((20 / 480) * 100vw));
-			font-weight: 300;
+			font-weight: 400;
 		}
 
 		#aboutme h2 {
@@ -832,9 +834,11 @@ const base = import.meta.env.BASE_URL;
 		.about__container__righttext__more {
 			margin: 50px auto 0;
 			width: 100%;
+			border: 1px solid #000;
 		}
 		.about__container__righttext__more p.h3 {
 			font-size: min(20px, calc((20 / 480) * 100vw));	
+			font-weight: 400;
 		}
 	}
 	
