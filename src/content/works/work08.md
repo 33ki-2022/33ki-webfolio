@@ -3,7 +3,7 @@ title: "〈自主制作〉3DCG カヌレ"
 startDate: 2024-02-04
 endDate: 2024-02-10
 year: 2024
-thumbnail: "images/work/cannele.webp"
+thumbnail: "images/work/grid-cannele.webp"
 tags: ["Blender"]
 gallery:
   - images/work/cannele.webp

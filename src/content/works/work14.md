@@ -3,7 +3,7 @@ title: "〈授業課題〉お天気アイコンデザイン"
 startDate: 2024-09-16
 endDate: 2024-11-11
 year: 2024
-thumbnail: "images/work/weathericon.webp"
+thumbnail: "images/work/grid-weathericon.webp"
 tags: ["AfterEffects","Illustrator"]
 gallery:
   - images/work/weathericon1.webp
